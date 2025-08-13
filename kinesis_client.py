@@ -5,7 +5,7 @@ import json
 kinesis_client = boto3.client('kinesis', region_name='us-east-1')
 
 # Stream name
-STREAM_NAME = 'MyDataStream'
+STREAM_NAME = 'Word2Stocks'
 
 def put_record(data, partition_key):
     """
