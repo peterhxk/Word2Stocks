@@ -1,11 +1,15 @@
 import boto3
 import json
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Initialize Kinesis client
-kinesis_client = boto3.client('kinesis', region_name='us-east-1')
+kinesis_client = boto3.client('kinesis', region_name=os.getenv("AWS_REGION"))
 
 # Stream name
-STREAM_NAME = 'MyDataStream'
+STREAM_NAME = 'Word2Stocks'
 
 def put_record(data, partition_key):
     """
