@@ -119,7 +119,7 @@ class TwitterPoller:
             tweet_fields=["created_at", "author_id", "public_metrics", "context_annotations"]
         )
     
-    def poll_recent_tweets(self, query, max_results=5):
+    def poll_recent_tweets(self, query, max_results=10):
         """
         Poll for recent tweets using search (alternative to streaming)
         
@@ -174,7 +174,7 @@ if __name__ == "__main__":
         
         # Option 2: Poll recent tweets (for testing or batch processing)
         print("Polling recent tweets...")
-        twitter_poller.poll_recent_tweets("Apple", max_results=1)
+        twitter_poller.poll_recent_tweets("Apple", max_results=10)
         
     except KeyboardInterrupt:
         print("\nStopping Twitter polling...")
